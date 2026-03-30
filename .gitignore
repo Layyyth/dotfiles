@@ -1,0 +1,20 @@
+# Lazy.nvim plugin data
+.local/share/nvim/
+
+# Plugin lock
+config/nvim/lazy-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Language specific
+go/pkg/
+go/bin/
+node_modules/
+venv/
+.venv/

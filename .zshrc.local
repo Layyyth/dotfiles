@@ -1,0 +1,58 @@
+# =============================================================================
+# Local Zsh Configuration
+# =============================================================================
+# This file is sourced at the end of .zshrc
+# Add your custom configurations here
+
+# -------------------------------------------------------
+# Neovim 0.12+ Path (Full LSP support)
+# -------------------------------------------------------
+export PATH="$HOME/.local/bin:$PATH"
+
+# -------------------------------------------------------
+# Optional: Install recommended tools for full productivity
+# -------------------------------------------------------
+
+# To install fzf and ripgrep (essential for productivity):
+# sudo apt-get install fzf ripgrep
+
+# Then restart your terminal and type 'fzf' to initialize the key bindings
+
+# -------------------------------------------------------
+# Custom aliases (add your own here)
+# -------------------------------------------------------
+
+# Example: OpenCode specific aliases
+# alias ocll='opencode chat --model=claude-sonnet-4-20250514'
+
+# -------------------------------------------------------
+# Project-specific configurations
+# -------------------------------------------------------
+
+# Example: Project-specific environment variables
+# export MY_PROJECT_API_KEY="your-key-here"
+
+# -------------------------------------------------------
+# Development notes
+# -------------------------------------------------------
+
+# Key shortcuts:
+# - Ctrl+R: Search command history
+# - Ctrl+F: Forward search in history
+# - Tab: Autocomplete with fuzzy matching (requires fzf)
+# - Ctrl+T: Insert selected file path (requires fzf)
+# - z <dir>: Jump to frequently used directory
+# - zz: Interactively select from visited directories
+
+# Useful functions:
+# - mkcd <dir>: Create and cd into directory
+# - extract <file>: Extract any archive
+# - ff <pattern>: Find files by name
+# - fg <pattern>: Find text in files
+# - serve [port]: Start Python HTTP server
+# - gcommit <msg>: Commit all changes with message
+
+# Global aliases (work anywhere in command line):
+# - <cmd> G: Pipe to grep
+# - <cmd> L: Pipe to less
+# - <cmd> GI: Pipe to grep case-insensitive
