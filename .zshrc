@@ -80,8 +80,8 @@ fi
 # -----------------------------------------------------------------------------
 # Only configure fzf if it's installed
 if command -v fzf &> /dev/null; then
-  # Enable fzf ctrl-r and alt-c key bindings
-  export FZF_CTRL_R_COMMAND="fc -rl 1"
+  # Enable fzf ctrl-r and alt-c key bindings (remove custom command to avoid warning)
+  unset FZF_CTRL_R_COMMAND
   export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude .git"
   
   # Source fzf key bindings (Ctrl+R, Ctrl+T, Alt+C)
