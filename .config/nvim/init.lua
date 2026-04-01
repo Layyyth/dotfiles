@@ -55,6 +55,26 @@ require("lazy").setup({
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
   },
+  {
+    "nvim-tree/nvim-web-devicons",
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
+  },
+  {
+    "glepnir/lspsaga.nvim",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+  {
+    "akinsho/toggleterm.nvim",
+  },
 
   -- =============================================================================
   -- Autocomplete
@@ -131,6 +151,9 @@ require("user.options")
 require("user.keybindings")
 
 -- Load plugin configs
+require("user.options")
+require("user.keybindings")
+require("user.theme")
 require("user.tree")
 require("user.lualine")
 require("user.bufferline")
@@ -141,6 +164,10 @@ require("user.gitsigns")
 require("user.lsp")
 require("user.dap")
 require("user.snippets")
+require("user.telescope")
+require("user.toggleterm")
+require("user.treesitter")
+require("user.lspsaga")
 
 -- Apply theme manually after everything loads
 vim.cmd("colorscheme tokyonight")

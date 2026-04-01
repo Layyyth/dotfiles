@@ -2,8 +2,8 @@
 -- ToggleTerm Configuration (Terminal)
 -- =============================================================================
 require("toggleterm").setup({
-  size = 10,
-  open_mapping = [[<C-t>]],
+  size = 20,
+  open_mapping = [[<C-\>]],
   hide_numbers = true,
   shade_filetypes = {},
   shade_terminals = true,
@@ -11,7 +11,7 @@ require("toggleterm").setup({
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  direction = "float",
+  direction = "vertical",
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
@@ -22,34 +22,12 @@ require("toggleterm").setup({
       background = "Normal",
     },
   },
-  -- VS Code-like terminal settings
-  -- Terminals that get opened when running these commands
-  terminals = {
-    float = {
-      -- float terminal direction
-      direction = "float",
-    },
-    horizontal = {
-      direction = "horizontal",
-      size = 10,
-    },
-    vertical = {
-      direction = "vertical",
-      size = 10,
-    },
-    -- This is for toggleterm
-    toggle = function()
-      local Terminal = require("toggleterm.terminal")
-      local term = Terminal:new(vim.tbl_extend("force", {
-        count = 1,
-        direction = "float",
-      }, {}))
-      term:toggle()
-    end,
-  },
 })
 
--- Terminal settings
-vim.api.nvim_set_keymap("n", "<leader>tt", ":ToggleTerm direction=float name=float<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>th", ":ToggleTerm direction=horizontal name=horizontal<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>tv", ":ToggleTerm direction=vertical name=vertical<CR>", { noremap = true, silent = true })
+-- Terminal sizes
+vim.api.nvim_set_keymap("n", "<C-n>", ":ToggleTerm direction=vertical size=50<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-h>", ":ToggleTerm direction=horizontal size=15<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-f>", ":ToggleTerm direction=float size=30<CR>", { noremap = true, silent = true })
+
+-- Also add terminal escape to go to normal mode in terminal
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })

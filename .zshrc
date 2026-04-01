@@ -65,7 +65,7 @@ export GOPATH=$HOME/go
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
 # fnm - Fast Node Manager
-FNM_PATH="/home/layth/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
@@ -418,3 +418,7 @@ alias vllm-logs="docker compose -f $HOME/Documents/Local_Vllm/docker-compose.yml
 # Load additional local configurations if they exist
 # =============================================================================
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# MultiExec
+export PATH="$HOME/.multiexec:$PATH"
+alias multiexec='$HOME/.multiexec/multiexec'
