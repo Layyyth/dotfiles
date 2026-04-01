@@ -80,9 +80,12 @@ fi
 # -----------------------------------------------------------------------------
 # Only configure fzf if it's installed
 if command -v fzf &> /dev/null; then
-  # Use fzf for command history search
-  bindkey '^R' history-incremental-search-backward
-  bindkey '^F' history-incremental-search-forward
+  # Enable fzf ctrl-r and alt-c key bindings
+  export FZF_CTRL_R_COMMAND="fc -rl 1"
+  export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude .git"
+  
+  # Source fzf key bindings (Ctrl+R, Ctrl+T, Alt+C)
+  source "$HOME/.fzf/shell/key-bindings.zsh"
 
   # Enable fzf-tab for fuzzy completion
   zstyle ':fzf-tab:*' continuous-trigger '/'

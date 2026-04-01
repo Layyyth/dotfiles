@@ -27,7 +27,7 @@ require("toggleterm").setup({
 -- Terminal sizes
 vim.api.nvim_set_keymap("n", "<C-n>", ":ToggleTerm direction=vertical size=50<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-h>", ":ToggleTerm direction=horizontal size=15<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-f>", ":ToggleTerm direction=float size=30<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-t>", ":ToggleTerm direction=float size=30<CR>", { noremap = true, silent = true })
 
 -- Also add terminal escape to go to normal mode in terminal
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
